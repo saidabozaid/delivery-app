@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase.dart';
@@ -37,7 +36,6 @@ class _MainShellState extends State<MainShell> {
       body: SafeArea(
         child: Column(
           children: [
-            // Top Toggle عميل / مندوب
             Padding(
               padding: EdgeInsets.all(16),
               child: Container(
@@ -160,7 +158,7 @@ class _TrackingScreenState extends State<TrackingScreen>{
       });
       if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("تم حفظ سعيد - اكتوبر بنجاح ✅"), backgroundColor: Colors.green));
     } catch(e){
-      if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("خطأ: $e - تأكد من النت و supabase key"), backgroundColor: Colors.red));
+      if(mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("خطأ: $e"), backgroundColor: Colors.red));
     }
     setState(()=>loading=false);
   }
