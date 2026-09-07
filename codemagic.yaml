@@ -11,6 +11,10 @@ workflows:
           if [ ! -d "android" ]; then
             flutter create . --platforms=android
           fi
+          if ! grep -q "android.permission.INTERNET" android/app/src/main/AndroidManifest.xml; then
+            sed -i '' 's/<application/<uses-permission android:name="android.permission.INTERNET" \/>\
+          <application/' android/app/src/main/AndroidManifest.xml || sed -i 's/<application/<uses-permission android:name="android.permission.INTERNET" \/>\n<application/' android/app/src/main/AndroidManifest.xml
+          fi
           flutter pub get
       - name: Build APK
         script: flutter build apk --release
