@@ -6,7 +6,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: 'https://flszwmgtkiysvxpvzgtb.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsc3p3bWd0a2l5c3Z4cHZ6Z3RiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4ODcyMzI3MCwiZXhwIjoyMTA0Mjk5MjcwfQ.xAsPgzCR60Fp9Pxuw2iM9MXN_sM6vUvAqRRuAfQ6I-E',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsc3p3bWd0a2l5c3Z4cHZ6Z3RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU3OTM2OTAsImV4cCI6MjA0MTM2OTY5MH0.EXAMPLE_REPLACE_ME',
   );
   runApp(DeliveryShopApp());
 }
@@ -47,7 +47,7 @@ class _MainShellState extends State<MainShell> {
                 ]),
               ),
             ),
-            Expanded(child: isDriver ? _buildDriver() : _buildCustomer()),
+            Expanded(child: isDriver ? _buildDriver() : _buildCustomer())
           ],
         ),
       ),
@@ -84,7 +84,7 @@ class _MainShellState extends State<MainShell> {
     if(tab==0) return HomeCustomer(onNewShipment: ()=>setState(()=>tab=1));
     if(tab==1) return TrackingScreen();
     if(tab==2) return WalletScreen();
-    return Center(child: Text("حسابي - سعيد - 6 اكتوبر"));
+    return Center(child: Text("حسابي - سعيد - 6 اكتوبر", style: TextStyle(fontSize:18, fontWeight: FontWeight.bold)));
   }
   Widget _buildDriver(){
     return ListView(
