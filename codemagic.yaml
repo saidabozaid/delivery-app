@@ -6,9 +6,11 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Create Android
+      - name: Build Android Folder Once
         script: |
-          flutter create . --platforms=android --overwrite
+          if [ ! -d "android" ]; then
+            flutter create . --platforms=android
+          fi
           flutter pub get
       - name: Build APK
         script: flutter build apk --release
