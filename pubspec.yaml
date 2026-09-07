@@ -1,0 +1,13 @@
+name: delivery_app
+description: Delivery Shop - شحنتك في أمان
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.5.0
+  google_fonts: ^6.1.0
+flutter:
+  uses-material-design: true
